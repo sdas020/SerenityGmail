@@ -1,0 +1,58 @@
+plugins {
+    
+    id 'java-library'
+}
+
+repositories {
+    
+    mavenCentral()
+}
+
+
+dependencies {
+    compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+    //testCompile group: 'junit', name: 'junit', version: '4.13'
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+    compile ("net.serenity-bdd:serenity-core:2.0.88")
+    compile ("net.serenity-bdd:serenity-screenplay:2.0.88")
+    compile ("net.serenity-bdd:serenity-screenplay-webdriver:2.0.88")
+    //compile "io.cucumber:cucumber-java:${cucumberJVMVersion}"
+    //compile("io.cucumber:cucumber-junit:${cucumberJVMVersion}") {
+    //        exclude group: "junit"
+    //}
+   // compile("commons-logging:commons-logging:1.2.1.1")
+    compile("org.apache.commons:commons-csv:1.7")
+   // compile "junit:junit:${junitVersion}"
+    compile "com.google.code.gson:gson:2.8.6"
+
+   // testCompile ("ch.qos.logback:logback-classic:${logbackVersion}") {
+   //     exclude module: "slf4j-api"
+   // }
+    testCompile "org.assertj:assertj-core:3.14.0"
+    testCompile "org.codehaus.groovy:groovy-all:3.0.0-rc-1"
+    //testCompile "net.serenity-bdd:serenity-rest-assured:2.0.70"
+    testCompile "net.serenity-bdd:serenity-rest-assured:2.0.88"
+    testCompile "net.serenity-bdd:serenity-screenplay-rest:2.0.88"
+    testCompile "io.rest-assured:rest-assured:4.1.2"
+    //testCompile 'net.serenity-bdd:serenity-cucumber:1.1.13'
+    //testCompile 'net.serenity-bdd:serenity-cucumber:1.1.13'
+    testCompile 'net.serenity-bdd:serenity-cucumber:1.9.48'
+    compile group: 'com.googlecode.lambdaj', name: 'lambdaj', version: '2.3.3'
+    //testCompile 'org.hamcrest:hamcrest-core:1.3'
+   // testCompile("org.spockframework:spock-core:2.4") {
+   //     exclude group: "junit"
+   //     exclude module: "groovy-all"
+   // }
+   // testCompile("com.github.goldin:spock-extensions:${spockExtensionsVersion}") {
+   //     exclude module: "spock-core"
+   //     exclude module: "slf4j-api"
+   // }
+}
+
+
+test {
+
+
+        maxParallelForks = System.properties.'serenity.fork.count' as Integer ?: 1
+        
+    }    
