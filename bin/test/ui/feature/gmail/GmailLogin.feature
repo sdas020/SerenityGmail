@@ -7,8 +7,8 @@ Feature: Gmail mail login flow
     When User login with <Email> and <password>
 
     Examples: 
-      | TestCase | Email                         | password  |
-      | TC_1     | test100timesalltime@gmail.com | test@1234 |
+      | TestCase | Email         | password         |
+      | TC_1     | Provide Email | Provide password |
 
   @gmailSignInWrongMail
   Scenario Outline: User logged in using credential with invalid email.
@@ -17,8 +17,8 @@ Feature: Gmail mail login flow
     Then User validates <ErrorMessage>
 
     Examples: 
-      | TestCase | Email                          | ErrorMessage                      |
-      | TC_2     | test1000timesalltime@gmail.com | Couldn't find your Google Account |
+      | TestCase | Email               | ErrorMessage                      |
+      | TC_2     | Provide wrong email | Couldn't find your Google Account |
 
   @gmailSignInWrongPassword
   Scenario Outline: User logged in using credential with invalid password.
@@ -27,5 +27,5 @@ Feature: Gmail mail login flow
     Then User validates <ErrorMessage>
 
     Examples: 
-      | TestCase | Email                         | password | ErrorMessage                                                      |
-      | TC_3     | test100timesalltime@gmail.com | test@123 | Wrong password. Try again or click ‘Forgot password’ to reset it. |
+      | TestCase | Email         | password               | ErrorMessage                                                      |
+      | TC_3     | Provide Email | Provide wrong password | Wrong password. Try again or click ‘Forgot password’ to reset it. |
